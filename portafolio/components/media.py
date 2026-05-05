@@ -15,14 +15,15 @@ def media(data: Media) -> rx.Component:
         rx.hstack(
             icon_button(
                 "file-text",
-                data.cv
+                rx.asset(data.cv.lstrip("/")),
+                download_filename="Jonathan_Huarca_CV.pdf",
             ),
             icon_button(
-                "github",
+                "folder_git_2",
                 data.github
             ),
             icon_button(
-                "linkedin",
+                "external_link",
                 data.likedin
             ),
             spacing=Size.SMALL.value

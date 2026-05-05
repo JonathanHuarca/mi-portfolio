@@ -12,13 +12,21 @@ def info_detail(info: Info) -> rx.Component:
             rx.vstack(
                 rx.text.strong(info.title),
                 rx.text(info.subtitle),
+                rx.cond(
+                    info.status != "",
+                    rx.badge(
+                        "Próximamente" if info.status == "en_progreso" else info.status,
+                        color_scheme="amber",
+                        variant="surface",
+                    ),
+                ),
                 rx.text(
                     info.description,
                     size=Size.SMALL.value,
                     color_scheme="gray"
                 ),
                 rx.cond(
-                    info.technologies,
+                    bool(info.technologies),
                     rx.flex(
                         *[
                             rx.badge(
@@ -34,7 +42,7 @@ def info_detail(info: Info) -> rx.Component:
                 ),
                 rx.hstack(
                     rx.cond(
-                        info.url != "",
+                        (info.url != "") & (info.url != "#"),
                         icon_button(
                             "link",
                             info.url
@@ -43,7 +51,7 @@ def info_detail(info: Info) -> rx.Component:
                     rx.cond(
                         info.github != "",
                         icon_button(
-                            "github",
+                            "folder_git_2",
                             info.github
                         )
                     )
@@ -57,7 +65,7 @@ def info_detail(info: Info) -> rx.Component:
         rx.cond(
             info.image != "",
             rx.image(
-                src=info.image,
+                src=rx.asset(info.image.lstrip("/")),
                 height=IMAGE_HEIGHT,
                 width="auto",
                 border_radius=EmSize.DEFAULT.value,

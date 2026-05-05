@@ -1,14 +1,14 @@
 {
     "title": "Jonathan Huarca | Portafolio",
     "description": "Desarrollador Fullstack especializado en microservicios y Cloud Azure",
-    "image": "/perfil-moventi.jpg",
-    "avatar": "/perfil-moventi.jpg",
+    "image": "perfil-moventi.jpg",
+    "avatar": "perfil-moventi.jpg",
     "name": "Jonathan Steve Huarca Alfaro",
     "skill": "Desarrollador Fullstack",
     "location": "LIMA",
     "media": {
         "email": "jonathan.huarca@tecsup.edu.pe",
-        "cv": "/data/cv.pdf",
+        "cv": "/data/Jonathan_Huarca_CV.pdf",
         "github": "https://github.com/jonathanhuarca",
         "likedin": "https://linkedin.com/in/jonathanstevehuarca"
     },
@@ -101,8 +101,9 @@
                     "name": "Redis"
                 }
             ],
-            "image": "/project_1.jpg",
-            "url": "#",
+            "image": "",
+            "status": "en_progreso",
+            "url": "",
             "github": "https://github.com/jonathanhuarca"
         }
     ],
@@ -119,14 +120,22 @@
             "icon": "languages",
             "title": "Conversa Language School by TECSUP",
             "subtitle": "Inglés Intermedio (B1)",
-            "description": "Curso de inglés nivel intermedio.",
-            "date": "2023",
-            "certificate": "#"
+            "description": "Certificación de inglés Intermedio (B1). Credential ID: I-7545.",
+            "date": "Feb 2023",
+            "certificate": "https://academico-cloud.tecsup.edu.pe/pcc/#/home/certificado?c=7545&n=CONVERSA/I/1168&t=I"
+        },
+        {
+            "icon": "languages",
+            "title": "Conversa Language School by TECSUP",
+            "subtitle": "Inglés A2 (Básico)",
+            "description": "Certificación de inglés A2 (Básico). Credential ID: I-2998.",
+            "date": "Nov 2020",
+            "certificate": "https://academico-cloud.tecsup.edu.pe/pcc/#/home/certificado?c=2998&n=CONVERSA/B/904&t=I"
         }
     ],
     "extras": [
         {
-            "image": "/extra_1.jpg",
+            "image": "",
             "title": "Inglés Intermedio (B1)",
             "description": "Certificación de nivel de inglés intermedio.",
             "url": "#"

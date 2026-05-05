@@ -1,13 +1,13 @@
 *.db
+*.log
 *.py[cod]
+.DS_Store
 .states
 .venv
+.vscode/
 .web
 __pycache__/
 assets/external/
 public/
-venv/
-.vscode/
-.DS_Store
-*.log
 reflex.db
+venv/

@@ -16,7 +16,20 @@ class Technology:
 
 
 class Info:
-    def __init__(self, icon, title, subtitle, description, date="", certificate="", technologies=[], image="", url="", github=""):
+    def __init__(
+        self,
+        icon,
+        title,
+        subtitle,
+        description,
+        date="",
+        certificate="",
+        technologies=[],
+        image="",
+        url="",
+        github="",
+        status="",
+    ):
         self.icon = icon
         self.title = title
         self.subtitle = subtitle
@@ -27,6 +40,7 @@ class Info:
         self.image = image
         self.url = url
         self.github = github
+        self.status = status
 
 
 class Extra:

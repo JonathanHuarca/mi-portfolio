@@ -8,7 +8,7 @@ from portafolio.styles.styles import Size
 def header(data: Data) -> rx.Component:
     return rx.hstack(
         rx.avatar(
-            src=data.avatar,
+            src=rx.asset(data.avatar.lstrip("/")),
             size=Size.BIG.value
         ),
         rx.vstack(

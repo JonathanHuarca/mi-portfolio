@@ -2,7 +2,6 @@ import reflex as rx
 from portafolio import data
 from portafolio.styles.styles import BASE_STYLE, MAX_WIDTH, STYLESHEETS, EmSize, Size
 from portafolio.views.about import about
-from portafolio.views.extra import extra
 from portafolio.views.footer import footer
 from portafolio.views.header import header
 from portafolio.views.info import info
@@ -19,10 +18,9 @@ def index() -> rx.Component:
             about(DATA.about),
             rx.divider(),
             tech_stack(DATA.technologies),
-            info("Experiencia", DATA.experience),
+            info("Experiencia", list(reversed(DATA.experience))),
             info("Proyectos", DATA.projects),
             info("Formación", DATA.training),
-            extra(DATA.extras),
             rx.divider(),
             footer(DATA.media),
             spacing=Size.MEDIUM.value,
@@ -46,7 +44,7 @@ app = rx.App(
 
 title = DATA.title
 description = DATA.description
-image = DATA.image
+image = rx.asset(DATA.image.lstrip("/"))
 
 app.add_page(
     index,
