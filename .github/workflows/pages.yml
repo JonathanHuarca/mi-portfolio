@@ -43,7 +43,11 @@ jobs:
         run: |
           rm -rf public
           mkdir -p public
-          if [ -f ".web/build/client/index.html" ]; then
+          if [ -f ".web/public/index.html" ]; then
+            cp -r .web/public/. public/
+          elif [ -f ".web/build/client/public/index.html" ]; then
+            cp -r .web/build/client/public/. public/
+          elif [ -f ".web/build/client/index.html" ]; then
             cp -r .web/build/client/. public/
           elif [ -f ".web/_static/index.html" ]; then
             cp -r .web/_static/. public/
@@ -51,6 +55,7 @@ jobs:
             echo "No se encontro index.html en rutas conocidas de Reflex."
             ls -la .web || true
             ls -la .web/build || true
+            ls -la .web/build/client || true
             exit 1
           fi
           # .nojekyll evita que Pages filtre archivos/carpetas.
