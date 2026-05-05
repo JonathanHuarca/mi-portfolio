@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (pages.yml)
 
 on:
   push:
@@ -20,6 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -34,7 +37,14 @@ jobs:
           # Ajusta esto si tu repo NO se llama "mi-portfolio"
           FRONTEND_PATH: "/mi-portfolio"
         run: |
-          reflex export --no-zip
+          reflex export --no-zip --frontend-only
+
+      - name: Ensure output is valid for Pages
+        run: |
+          # GitHub Pages can ignore some paths when Jekyll is enabled.
+          # .nojekyll disables Jekyll processing for the published artifact.
+          touch .web/build/client/.nojekyll
+          test -f .web/build/client/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
