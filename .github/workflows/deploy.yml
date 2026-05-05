@@ -43,21 +43,39 @@ jobs:
         run: |
           rm -rf public
           mkdir -p public
-          if [ -f ".web/public/index.html" ]; then
-            cp -r .web/public/. public/
-          elif [ -f ".web/build/client/public/index.html" ]; then
-            cp -r .web/build/client/public/. public/
-          elif [ -f ".web/build/client/index.html" ]; then
-            cp -r .web/build/client/. public/
-          elif [ -f ".web/_static/index.html" ]; then
-            cp -r .web/_static/. public/
-          else
+          SOURCE_DIR=""
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+
+          for CANDIDATE in \
+            ".web/public" \
+            ".web/build/client/public" \
+            ".web/build/client/${REPO_NAME}" \
+            ".web/build/client" \
+            ".web/_static"
+          do
+            if [ -f "${CANDIDATE}/index.html" ]; then
+              SOURCE_DIR="${CANDIDATE}"
+              break
+            fi
+          done
+
+          if [ -z "${SOURCE_DIR}" ]; then
+            FOUND_INDEX="$(find .web -maxdepth 6 -type f -name index.html | head -n 1)"
+            if [ -n "${FOUND_INDEX}" ]; then
+              SOURCE_DIR="$(dirname "${FOUND_INDEX}")"
+            fi
+          fi
+
+          if [ -z "${SOURCE_DIR}" ]; then
             echo "No se encontro index.html en rutas conocidas de Reflex."
             ls -la .web || true
             ls -la .web/build || true
             ls -la .web/build/client || true
             exit 1
           fi
+
+          echo "Usando salida estatica desde: ${SOURCE_DIR}"
+          cp -r "${SOURCE_DIR}"/. public/
           touch public/.nojekyll
 
       - name: Upload Pages artifact
