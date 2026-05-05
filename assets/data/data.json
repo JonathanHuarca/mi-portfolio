@@ -1,0 +1,135 @@
+{
+    "title": "Jonathan Huarca | Portafolio",
+    "description": "Desarrollador Fullstack especializado en microservicios y Cloud Azure",
+    "image": "/perfil-moventi.jpg",
+    "avatar": "/perfil-moventi.jpg",
+    "name": "Jonathan Steve Huarca Alfaro",
+    "skill": "Desarrollador Fullstack",
+    "location": "LIMA",
+    "media": {
+        "email": "jonathan.huarca@tecsup.edu.pe",
+        "cv": "/data/cv.pdf",
+        "github": "https://github.com/jonathanhuarca",
+        "likedin": "https://linkedin.com/in/jonathanstevehuarca"
+    },
+    "about": "Desarrollador Mid-Senior Fullstack con más de 4 años de experiencia profesional, especializado actualmente en arquitecturas de microservicios y ecosistemas Cloud (Azure). Experto en el diseño de soluciones de alta concurrencia utilizando Java/Spring Boot y .NET/C#, optimizando el rendimiento mediante Redis y comunicación en tiempo real. Pionero en la adopción de desarrollo asistido por IA (LLMs) para acelerar ciclos de entrega y elevar los estándares de calidad de código bajo principios SOLID y Clean Architecture.",
+    "technologies": [
+        {
+            "icon": "devicon-java-plain",
+            "name": "Java (Spring Boot)"
+        },
+        {
+            "icon": "devicon-dotnetcore-plain",
+            "name": ".NET/C#"
+        },
+        {
+            "icon": "devicon-php-plain",
+            "name": "PHP (Laravel)"
+        },
+        {
+            "icon": "devicon-javascript-plain",
+            "name": "JavaScript (TypeScript)"
+        },
+        {
+            "icon": "devicon-angularjs-plain",
+            "name": "Angular"
+        },
+        {
+            "icon": "devicon-nextjs-plain",
+            "name": "Next.js"
+        },
+        {
+            "icon": "devicon-azure-plain",
+            "name": "Azure"
+        },
+        {
+            "icon": "devicon-docker-plain",
+            "name": "Docker"
+        },
+        {
+            "icon": "devicon-redis-plain",
+            "name": "Redis"
+        },
+        {
+            "icon": "devicon-mongodb-plain",
+            "name": "MongoDB"
+        }
+    ],
+    "experience": [
+        {
+            "icon": "terminal",
+            "title": "PERU APPS S.A.C.",
+            "subtitle": "Trainee Pro I",
+            "description": "Desarrollo de módulos Java bajo estándares corporativos y soporte al Front-End del Back-Office utilizando Angular.",
+            "date": "11/2021 - 05/2022"
+        },
+        {
+            "icon": "building",
+            "title": "MOVENTI CORPORATE S.A.C.",
+            "subtitle": "Trainee Pro II",
+            "description": "Desarrollo de soluciones backend con PHP Laravel y Next.js, gestión de módulos administrativos en Angular y soporte técnico nivel 2.",
+            "date": "06/2022 - 12/2022"
+        },
+        {
+            "icon": "zap",
+            "title": "MOVENTI CORPORATE S.A.C.",
+            "subtitle": "Junior Fullstack Developer",
+            "description": "Diseñé e implementé una solución de alta concurrencia para e-commerce con PHP Laravel y Redis, eliminando fallos durante picos de demanda.",
+            "date": "01/2023 - 07/2025"
+        },
+        {
+            "icon": "sparkles",
+            "title": "PERU APPS S.A.C.",
+            "subtitle": "Mid-Senior Fullstack Developer",
+            "description": "Especialista en microservicios Cloud con .NET/C# y Java/Spring Boot. Implemento desarrollo asistido por IA para optimizar calidad y acelerar entregas.",
+            "date": "08/2025 - actualidad"
+        }
+    ],
+    "projects": [
+        {
+            "icon": "shopping-cart",
+            "title": "E-commerce Alta Concurrencia",
+            "subtitle": "Plataforma de alto tráfico",
+            "description": "Solución de alta concurrencia para e-commerce utilizando PHP Laravel y Redis, eliminando fallos durante picos de demanda con WebSockets y procesamiento asíncrono.",
+            "technologies": [
+                {
+                    "icon": "devicon-php-plain",
+                    "name": "PHP Laravel"
+                },
+                {
+                    "icon": "devicon-redis-plain",
+                    "name": "Redis"
+                }
+            ],
+            "image": "/project_1.jpg",
+            "url": "#",
+            "github": "https://github.com/jonathanhuarca"
+        }
+    ],
+    "training": [
+        {
+            "icon": "graduation-cap",
+            "title": "TECSUP",
+            "subtitle": "Diseño y Desarrollo de Software",
+            "description": "Carrera profesional en Diseño y Desarrollo de Software.",
+            "date": "2018 - 2021",
+            "certificate": "#"
+        },
+        {
+            "icon": "languages",
+            "title": "Conversa Language School by TECSUP",
+            "subtitle": "Inglés Intermedio (B1)",
+            "description": "Curso de inglés nivel intermedio.",
+            "date": "2023",
+            "certificate": "#"
+        }
+    ],
+    "extras": [
+        {
+            "image": "/extra_1.jpg",
+            "title": "Inglés Intermedio (B1)",
+            "description": "Certificación de nivel de inglés intermedio.",
+            "url": "#"
+        }
+    ]
+}
