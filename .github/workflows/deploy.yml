@@ -39,15 +39,26 @@ jobs:
         run: |
           reflex export --no-zip --frontend-only
 
-      - name: Ensure output is valid for Pages
+      - name: Prepare Pages artifact
         run: |
-          touch .web/build/client/.nojekyll
-          test -f .web/build/client/index.html
+          rm -rf public
+          mkdir -p public
+          if [ -f ".web/build/client/index.html" ]; then
+            cp -r .web/build/client/. public/
+          elif [ -f ".web/_static/index.html" ]; then
+            cp -r .web/_static/. public/
+          else
+            echo "No se encontro index.html en rutas conocidas de Reflex."
+            ls -la .web || true
+            ls -la .web/build || true
+            exit 1
+          fi
+          touch public/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .web/build/client
+          path: public
 
   deploy:
     needs: build
